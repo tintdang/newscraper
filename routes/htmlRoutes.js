@@ -4,4 +4,10 @@ module.exports = function(app) {
             title: "Home"
         });
     });
+    
+    app.get("/saved", function(req, res) {
+        res.render("saved", {
+            title: "Saved Articles"
+        });
+    });
 }
