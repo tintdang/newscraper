@@ -1,6 +1,13 @@
-
 <div class="container">
 
-<h1>HI place content in me with handlebars</h1>
-{{!-- think about placing content when it's not saved. so think about putting in another variable like saved: boolean --}}
+    <h1>HI place content in me with handlebars</h1>
+    {{!-- think about placing content when it's not saved. so think about putting in another variable like saved:
+    boolean --}}
+    {{#each article}}
+    <div>
+        {{#unless saved}}
+
+        {{/unless}}
+    </div>
+    {{/each}}
 </div>
