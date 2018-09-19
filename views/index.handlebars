@@ -5,9 +5,19 @@
     boolean --}}
     {{#each article}}
     <div>
-        {{#unless saved}}
-
+        {{#unless isSaved}}
+            <p>{{this.headline}}</p>
         {{/unless}}
     </div>
     {{/each}}
+
+    {{!-- if nothing is in the DB render this --}}
+    {{#if empty}}
+        <div>
+            <p class="text-center">
+                No data here. please render some with the scraper
+            </p>
+        </div>
+    {{/if}}
+
 </div>

@@ -1,1 +1,18 @@
 <h1>Saved content here</h1>
+
+    {{#each article}}
+    <div>
+        {{#if isSaved}}
+            <p>{{this.headline}}</p>
+        {{/if}}
+    </div>
+    {{/each}}
+
+    {{!-- if nothing is in the DB render this --}}
+    {{#if empty}}
+        <div>
+            <p class="text-center">
+                No data here. please render some with the scraper
+            </p>
+        </div>
+    {{/if}}
