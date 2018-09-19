@@ -1,23 +1,24 @@
 <div class="container">
-
-    <h1>HI place content in me with handlebars</h1>
     {{!-- think about placing content when it's not saved. so think about putting in another variable like saved:
     boolean --}}
     {{#each article}}
+    {{#unless isSaved}}
     <div>
-        {{#unless isSaved}}
-            <p>{{this.headline}}</p>
-        {{/unless}}
+        <a href={{this.url}}>
+            <h3>{{this.headline}}</h3>
+        </a>
+        <p>{{this.summary}}</p>
     </div>
+    {{/unless}}
     {{/each}}
 
     {{!-- if nothing is in the DB render this --}}
     {{#if empty}}
-        <div>
-            <p class="text-center">
-                No data here. please render some with the scraper
-            </p>
-        </div>
+    <div>
+        <p class="text-center">
+            No data here. please render some with the scraper
+        </p>
+    </div>
     {{/if}}
 
 </div>

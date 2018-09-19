@@ -1,18 +1,27 @@
-<h1>Saved content here</h1>
+{{#each article}}
+<div class="container">
+    {{#if isSaved}}
+    <div class="row">
+        <div class="col-sm-10">
 
-    {{#each article}}
-    <div>
-        {{#if isSaved}}
-            <p>{{this.headline}}</p>
-        {{/if}}
-    </div>
-    {{/each}}
-
-    {{!-- if nothing is in the DB render this --}}
-    {{#if empty}}
-        <div>
-            <p class="text-center">
-                No data here. please render some with the scraper
-            </p>
+            <a href={{this.url}}>
+                <h3>{{this.headline}}</h3>
+            </a>
+            <p>{{this.summary}}</p>
         </div>
+        <div class="col-sm-2">
+            <button>Delete</button>
+        </div>
+    </div>
     {{/if}}
+</div>
+{{/each}}
+
+{{!-- if nothing is in the DB render this --}}
+{{#if empty}}
+<div class="container">
+    <p class="text-center">
+        No data here. please render some with the scraper
+    </p>
+</div>
+{{/if}}
